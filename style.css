@@ -1,0 +1,136 @@
+:root {
+  --bg: #0f1a17;
+  --card-bg: #14231f;
+  --gold: #c9a24b;
+  --green: #3fae72;
+  --text-main: #eef2ef;
+  --text-muted: #8fa39b;
+  --border: #24352f;
+  --font-display: 'Georgia', 'Times New Roman', serif;
+  --font-mono: 'Courier New', Courier, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: var(--text-main);
+  padding: 24px;
+}
+
+.card {
+  width: 100%;
+  max-width: 460px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 32px 28px;
+}
+
+.card__header h1 {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  margin: 0 0 4px;
+  color: var(--gold);
+}
+
+.subtitle {
+  margin: 0 0 28px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.converter {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 14px 12px;
+  align-items: end;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field:first-child {
+  grid-column: 1 / span 3;
+}
+
+label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+input, select {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-main);
+  padding: 10px 12px;
+  font-size: 1rem;
+  font-family: var(--font-mono);
+}
+
+input:focus, select:focus {
+  outline: 2px solid var(--green);
+  outline-offset: 1px;
+}
+
+#swap {
+  background: var(--green);
+  color: var(--bg);
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  align-self: end;
+  margin-bottom: 2px;
+}
+
+#swap:hover {
+  filter: brightness(1.1);
+}
+
+.result {
+  margin-top: 26px;
+  padding: 20px;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  text-align: center;
+}
+
+#resultValue {
+  font-family: var(--font-mono);
+  font-size: 2rem;
+  color: var(--gold);
+}
+
+.rate-info {
+  margin: 8px 0 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.card__footer {
+  margin-top: 20px;
+}
+
+.card__footer p {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin: 0;
+}
